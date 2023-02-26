@@ -1,7 +1,12 @@
 <template>
-  <view class="content">启动页</view>
+  <view class="content">
+    <!-- 头部 -->
+    <home-header />
+  </view>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import homeHeader from './c-cpns/home-header.vue'
+</script>
 
-<style lang="scss"></style>
+<style lang="scss" scoped></style>
