@@ -9,7 +9,10 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    CusAvatar: typeof import('./src/components/CusAvatar/CusAvatar.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    VanTab: typeof import('vant/es')['Tab']
+    VanTabs: typeof import('vant/es')['Tabs']
   }
 }

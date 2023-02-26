@@ -1,5 +1,5 @@
 <template>
-    <view>chat</view>
+  <view>chat</view>
 </template>
 
 <script setup lang="ts"></script>

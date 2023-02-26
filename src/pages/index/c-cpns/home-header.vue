@@ -2,7 +2,7 @@
   <view class="header">
     <view class="header-select">
       <text class="locate">广州</text>
-      <uni-icons type="location-filled" size="25"></uni-icons>
+      <uni-icons type="location" size="25"></uni-icons>
     </view>
     <view class="header-search">
       <uni-easyinput
@@ -12,7 +12,7 @@
       ></uni-easyinput>
     </view>
     <view class="header-message">
-      <uni-icons type="notification-filled" size="25"></uni-icons>
+      <uni-icons type="notification" size="25"></uni-icons>
     </view>
   </view>
 </template>
@@ -42,9 +42,6 @@ export default {
     justify-content: center;
     align-items: center;
     width: 150rpx;
-    .locate {
-      // font-size: 24rpx;
-    }
   }
   &-search {
     flex: 1;

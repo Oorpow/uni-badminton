@@ -1,5 +1,5 @@
 <template>
-    <view>friend</view>
+  <view>friend</view>
 </template>
 
 <script setup lang="ts"></script>
