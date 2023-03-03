@@ -9,7 +9,7 @@
 </template>
 
 <script setup lang="ts">
-import { onLoad } from '@dcloudio/uni-app'
+import {onLoad} from '@dcloudio/uni-app'
 import {reactive} from 'vue'
 import HomeHeader from './c-cpns/home-header.vue'
 import HomeTabs from './c-cpns/home-tabs.vue'
@@ -37,14 +37,6 @@ const tabList: ITabItem[] = [
 ]
 
 const tabbar = reactive(TabbarConfig)
-
-onLoad(() => {
-	// uni.getUserInfo({
-	// 	success(res) {
-	// 		console.log(res)
-	// 	}
-	// })
-})
 </script>
 
 <style lang="scss" scoped>
