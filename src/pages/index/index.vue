@@ -9,23 +9,62 @@
 </template>
 
 <script setup lang="ts">
+import { onLoad } from '@dcloudio/uni-app'
+import {reactive} from 'vue'
 import HomeHeader from './c-cpns/home-header.vue'
 import HomeTabs from './c-cpns/home-tabs.vue'
 
-const tabList = [
+import TabbarConfig from '@/config/tabbar'
+import type {ITabItem} from './c-cpns/types'
+
+// #ifdef MP-JD || MP-WEIXIN
+uni.hideHomeButton()
+// #endif
+
+const tabList: ITabItem[] = [
   {
-    id: 1,
-    title: '全部'
+    name: '全部',
+    value: 0
   },
   {
-    id: 2,
-    title: '赛事'
+    name: '赛事',
+    value: 1
   },
   {
-    id: 3,
-    title: '装备'
+    name: '动态',
+    value: 2
   }
 ]
+
+const tabbar = reactive(TabbarConfig)
+
+onLoad(() => {
+	// uni.getUserInfo({
+	// 	success(res) {
+	// 		console.log(res)
+	// 	}
+	// })
+})
 </script>
 
-<style lang="scss" scoped></style>
+<style lang="scss" scoped>
+.custom_style {
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: 24rpx;
+  &_icon {
+    background-color: #15357a;
+    font-size: 80rpx;
+    width: 120rpx;
+    height: 120rpx;
+    border-radius: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: -40rpx;
+  }
+}
+</style>

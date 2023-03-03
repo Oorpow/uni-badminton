@@ -1,17 +1,17 @@
 <template>
-  <!-- #ifdef H5 -->
-  <van-tabs v-model:active="currentTab">
-    <van-tab v-for="tab in tabList" :key="tab.id" :title="tab.title">
-      <view class="floor-container">
-        <floor-item />
-      </view>
-    </van-tab>
-  </van-tabs>
-  <!-- #endif -->
-
-  <!-- #ifdef MP-WEIXIN -->
-  <view class=""></view>
-  <!-- #endif -->
+  <view class="floor-container">
+    <zb-tab
+      :activeStyle="{
+        bottom: 0
+      }"
+      :data="tabList"
+      v-model="currentTab"
+      lineWidth="30"
+    ></zb-tab>
+    <view class="">
+      <floor-item></floor-item>
+    </view>
+  </view>
 </template>
 
 <script setup lang="ts">
@@ -25,10 +25,11 @@ type Props = {
 
 defineProps<Props>()
 
-const currentTab = ref()
+const currentTab = ref(0)
 </script>
 
 <style lang="scss" scoped>
+@import url('@/uni_modules/lgd-tab/components/lgd-tab/lgd-tab.css');
 .floor-container {
   margin-top: 40rpx;
 }

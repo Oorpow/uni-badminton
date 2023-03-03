@@ -1,4 +1,4 @@
 export interface ITabItem {
-  id: number
-  title: string
+  name: string
+  value: number
 }

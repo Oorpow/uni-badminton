@@ -33,6 +33,7 @@ import CusAvatar from '@/components/CusAvatar/CusAvatar.vue'
 <style lang="scss" scoped>
 .floor-item {
   display: flex;
+  justify-content: space-between;
   padding: 0 20rpx;
   margin-top: 50rpx;
   &-left {
@@ -42,7 +43,6 @@ import CusAvatar from '@/components/CusAvatar/CusAvatar.vue'
     .floor-text {
       margin-top: 10rpx;
       &-content {
-        width: 90%;
         overflow: hidden;
         display: -webkit-box;
         -webkit-box-orient: vertical;
