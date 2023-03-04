@@ -2,8 +2,8 @@
   <view class="avatar-container">
     <image
       :style="{width: pixelSize + 'rpx', height: pixelSize + 'rpx'}"
+	  :src="url"
       class="avatar-main"
-      src="https://fastly.jsdelivr.net/npm/@vant/assets/cat.jpeg"
       mode="aspectFill"
     />
     <slot name="username"></slot>
@@ -11,7 +11,7 @@
 </template>
 
 <script setup lang="ts">
-import {computed} from 'vue'
+import {computed, watch} from 'vue'
 type SIZE = 'large' | 'medium' | 'small'
 
 type Props = {

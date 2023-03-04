@@ -9,7 +9,6 @@
 </template>
 
 <script setup lang="ts">
-import {onLoad} from '@dcloudio/uni-app'
 import {reactive} from 'vue'
 import HomeHeader from './c-cpns/home-header.vue'
 import HomeTabs from './c-cpns/home-tabs.vue'
