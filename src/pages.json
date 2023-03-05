@@ -15,20 +15,30 @@
 	],
 	"tabBar": {
     "backgroundColor": "#fff",
+	"color": "#2c2c2c",
+	"selectedColor": "#f34e79",
 		"list": [
 			{
+				"iconPath": "static/tabbar/home-unselect.png",
+				"selectedIconPath": "static/tabbar/home.png",
 				"pagePath": "pages/index/index",
 				"text": "首页"
 			},
 			{
+				"iconPath": "static/tabbar/message-unselect.png",
+				"selectedIconPath": "static/tabbar/message.png",
 				"pagePath": "pages/chat/chat",
-				"text": "消息"
+				"text": "聊天"				
 			},
 			{
+				"iconPath": "static/tabbar/my-unselect.png",
+				"selectedIconPath": "static/tabbar/my.png",
 				"pagePath": "pages/friend/friend",
-				"text": "好友"
+				"text": "通讯录"
 			},
 			{
+				"iconPath": "static/tabbar/setting.png",
+				"selectedIconPath": "static/tabbar/setting-unselect.png",
 				"pagePath": "pages/my/my",
 				"text": "我的"
 			}

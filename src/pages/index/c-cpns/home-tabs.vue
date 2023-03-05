@@ -7,8 +7,9 @@
       :data="tabList"
       v-model="currentTab"
       lineWidth="30"
+      :lineColor="themeConfig.primaryColor"
     ></zb-tab>
-    <view class="">
+    <view>
       <floor-item></floor-item>
     </view>
   </view>
@@ -17,6 +18,7 @@
 <script setup lang="ts">
 import {ref} from 'vue'
 import FloorItem from './floor-item.vue'
+import theme from '../../../common/theme/theme.module.scss'
 import type {ITabItem} from './types'
 
 type Props = {
@@ -26,6 +28,8 @@ type Props = {
 defineProps<Props>()
 
 const currentTab = ref(0)
+const themeConfig = ref(theme)
+console.log(themeConfig.value)
 </script>
 
 <style lang="scss" scoped>
