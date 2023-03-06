@@ -29,7 +29,6 @@ defineProps<Props>()
 
 const currentTab = ref(0)
 const themeConfig = ref(theme)
-console.log(themeConfig.value)
 </script>
 
 <style lang="scss" scoped>

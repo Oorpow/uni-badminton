@@ -12,7 +12,16 @@
 		{
 			"path": "pages/friend/friend"
 		}
-	],
+	    ,{
+            "path" : "pages/auth/auth",
+            "style" :                                                                                    
+            {
+                "navigationBarTitleText": "",
+                "enablePullDownRefresh": false
+            }
+            
+        }
+    ],
 	"tabBar": {
     "backgroundColor": "#fff",
 	"color": "#2c2c2c",

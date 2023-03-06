@@ -5,11 +5,7 @@
       <uni-icons type="location" size="25"></uni-icons>
     </view>
     <view class="header-search">
-      <uni-easyinput
-        prefixIcon="search"
-        placeholder="输入搜索内容"
-        :styles="inputStyle"
-      ></uni-easyinput>
+		<uni-search-bar :radius="100" placeholder="请输入搜索内容" v-model="searchVal" @confirm="handleConfirmSearch"></uni-search-bar>
     </view>
     <view class="header-message">
       <uni-icons type="notification" size="25"></uni-icons>
@@ -18,9 +14,12 @@
 </template>
 
 <script setup lang="ts">
-const inputStyle = {
-  backgroundColor: '#f5f5f5',
-  borderColor: '#f5f5f5'
+import { ref } from 'vue'
+
+let searchVal = ref('')
+
+const handleConfirmSearch = () => {
+	console.log(searchVal.value)
 }
 </script>
 

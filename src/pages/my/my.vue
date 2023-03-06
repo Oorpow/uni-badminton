@@ -7,7 +7,7 @@
           <text class="nickname">{{ userInfo.nickName }}</text>
         </view>
         <view class="my_head_top-right">
-          <text class="impower">授权头像昵称</text>
+          <text class="impower" @click="navToAuthAvatarAndNick">授权头像昵称</text>
           <uni-icons type="forward"></uni-icons>
         </view>
       </view>
@@ -53,6 +53,13 @@ const getDefaultAvatarAndInfo = () => {
       userStore.updateUserInfo(res.userInfo as IUserInfo)
     }
   })
+}
+
+// 导航至授权页
+const navToAuthAvatarAndNick = () => {
+	uni.navigateTo({
+		url: '/pages/auth/auth'
+	})
 }
 </script>
 
