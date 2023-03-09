@@ -9,11 +9,8 @@
 </template>
 
 <script setup lang="ts">
-import {reactive} from 'vue'
 import HomeHeader from './c-cpns/home-header.vue'
 import HomeTabs from './c-cpns/home-tabs.vue'
-
-import TabbarConfig from '@/config/tabbar'
 import type {ITabItem} from './c-cpns/types'
 
 // #ifdef MP-JD || MP-WEIXIN
@@ -34,8 +31,6 @@ const tabList: ITabItem[] = [
     value: 2
   }
 ]
-
-const tabbar = reactive(TabbarConfig)
 </script>
 
 <style lang="scss" scoped>

@@ -3,12 +3,11 @@
     <view class="my_head">
       <view class="my_head_top">
         <view class="my_head_top-left">
-          <CusAvatar :url="userInfo.avatarUrl" size="large"></CusAvatar>
-          <text class="nickname">{{ userInfo.nickName }}</text>
+          <CusAvatar :url="userInfo.avatar" size="large"></CusAvatar>
+          <text class="nickname">{{ userInfo.name }}</text>
         </view>
-        <view class="my_head_top-right">
-          <text class="impower" @click="navToAuthAvatarAndNick">授权头像昵称</text>
-          <uni-icons type="forward"></uni-icons>
+        <view class="" @click="navToAuthPage">
+          <text>修改头像和昵称</text>
         </view>
       </view>
       <view class="my_head_bot">
@@ -24,42 +23,69 @@ import {storeToRefs} from 'pinia'
 import CusAvatar from '@/components/CusAvatar/CusAvatar.vue'
 import CusGrid from './c-cpns/CusGrid.vue'
 import {useUserStore} from '@/store/user'
-import type {IUserInfo} from './types'
+import {userWxLogin} from '@/request/api/login'
 
 const userStore = useUserStore()
-const {userInfo} = storeToRefs(userStore)
+const {userInfo, getOpenId} = storeToRefs(userStore)
+
+const navToAuthPage = () => {
+  uni.navigateTo({
+    url: '/pages/auth/auth'
+  })
+}
 
 onLoad(() => {
+  // 未登录的情况下
+  if (getOpenId.value === '') {
+    // userLogin()
+    completeInfo()
+  }
+})
+
+// 用户登录获取openid
+const userLogin = () => {
+  uni.login({
+    success: async (res) => {
+      const info: any = await userWxLogin(res.code)
+      userStore.setOpenId(info.data.openid)
+    }
+  })
+}
+
+// 完善信息
+const completeInfo = () => {
   uni.showModal({
     title: '完善信息',
     content: '为了更好的识别用户，请完善您的头像、昵称',
     confirmText: '去完善',
     success: function (res) {
       if (res.confirm) {
-        console.log('用户点击确定')
+        // 弹出提示，获取用户头像、昵称
       } else if (res.cancel) {
-        getDefaultAvatarAndInfo()
+        getAvatarAndInfo()
       }
-    }
-  })
-})
-
-// 获取默认的头像和昵称
-const getDefaultAvatarAndInfo = () => {
-  uni.getUserProfile({
-    desc: '登录授权',
-    lang: 'zh_CN',
-    success: (res) => {
-      userStore.updateUserInfo(res.userInfo as IUserInfo)
     }
   })
 }
 
-// 导航至授权页
-const navToAuthAvatarAndNick = () => {
-	uni.navigateTo({
-		url: '/pages/auth/auth'
-	})
+// 如果用户未授权，则获取默认的头像和昵称
+const getAvatarAndInfo = async () => {
+  uni.getUserProfile({
+    desc: '登录授权',
+    lang: 'zh_CN',
+    success: (res) => {
+      userStore.updateUserInfo({
+        avatar: res.userInfo.avatarUrl,
+        name: res.userInfo.nickName
+      })
+    },
+    fail: (err) => {
+      console.log(err)
+    },
+    complete: () => {
+      uni.hideLoading()
+    }
+  })
 }
 </script>
 

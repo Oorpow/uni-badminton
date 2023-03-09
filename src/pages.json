@@ -1,18 +1,18 @@
 {
-	"pages": [
-		{
-			"path": "pages/index/index"
-		},
-		{
-			"path": "pages/my/my"
-		},
-		{
-			"path": "pages/chat/chat"
-		},
-		{
-			"path": "pages/friend/friend"
-		}
-	    ,{
+  "pages": [
+    {
+      "path": "pages/index/index"
+    },
+    {
+      "path": "pages/my/my"
+    },
+    {
+      "path": "pages/chat/chat"
+    },
+    {
+      "path": "pages/friend/friend"
+    }
+      ,{
             "path" : "pages/auth/auth",
             "style" :                                                                                    
             {
@@ -22,41 +22,41 @@
             
         }
     ],
-	"tabBar": {
+  "tabBar": {
     "backgroundColor": "#fff",
-	"color": "#2c2c2c",
-	"selectedColor": "#f34e79",
-		"list": [
-			{
-				"iconPath": "static/tabbar/home-unselect.png",
-				"selectedIconPath": "static/tabbar/home.png",
-				"pagePath": "pages/index/index",
-				"text": "首页"
-			},
-			{
-				"iconPath": "static/tabbar/message-unselect.png",
-				"selectedIconPath": "static/tabbar/message.png",
-				"pagePath": "pages/chat/chat",
-				"text": "聊天"				
-			},
-			{
-				"iconPath": "static/tabbar/my-unselect.png",
-				"selectedIconPath": "static/tabbar/my.png",
-				"pagePath": "pages/friend/friend",
-				"text": "通讯录"
-			},
-			{
-				"iconPath": "static/tabbar/setting.png",
-				"selectedIconPath": "static/tabbar/setting-unselect.png",
-				"pagePath": "pages/my/my",
-				"text": "我的"
-			}
-		]
-	},
-	"globalStyle": {
-		"navigationBarTextStyle": "black",
-		"navigationBarTitleText": "羽坛在线",
-		"navigationBarBackgroundColor": "#fff",
-		"backgroundColor": "#fff"
-	}
+    "color": "#2c2c2c",
+    "selectedColor": "#f34e79",
+    "list": [
+      {
+        "iconPath": "static/tabbar/home-unselect.png",
+        "selectedIconPath": "static/tabbar/home.png",
+        "pagePath": "pages/index/index",
+        "text": "首页"
+      },
+      {
+        "iconPath": "static/tabbar/message-unselect.png",
+        "selectedIconPath": "static/tabbar/message.png",
+        "pagePath": "pages/chat/chat",
+        "text": "聊天"
+      },
+      {
+        "iconPath": "static/tabbar/my-unselect.png",
+        "selectedIconPath": "static/tabbar/my.png",
+        "pagePath": "pages/friend/friend",
+        "text": "通讯录"
+      },
+      {
+        "iconPath": "static/tabbar/setting.png",
+        "selectedIconPath": "static/tabbar/setting-unselect.png",
+        "pagePath": "pages/my/my",
+        "text": "我的"
+      }
+    ]
+  },
+  "globalStyle": {
+    "navigationBarTextStyle": "black",
+    "navigationBarTitleText": "羽坛在线",
+    "navigationBarBackgroundColor": "#fff",
+    "backgroundColor": "#fff"
+  }
 }
